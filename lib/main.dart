@@ -2,10 +2,14 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 bool is_square(int n){
-  if (n < 0)
-    return false;
-  double sr = sqrt(n);
-  return  (sr*sr == n);
+  for (int i = 1; i * i <= n; i++) {
+
+    // If (i * i = n)
+    if ((n % i == 0) && (n / i == i)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 bool is_triangular(int n){
